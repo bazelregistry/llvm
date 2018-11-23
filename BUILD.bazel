@@ -1,0 +1,11 @@
+cc_library(
+  name = "clang",
+  deps = ["@llvm_win64//:clang"],
+  visibility = ["//visibility:public"],
+)
+
+cc_library(
+  name = "llvm",
+  deps = ["@llvm_win64//:llvm"],
+  visibility = ["//visibility:public"],
+)

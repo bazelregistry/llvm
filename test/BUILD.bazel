@@ -1,0 +1,7 @@
+cc_test(
+  name = "basic-clang",
+  srcs = ["test.cpp"],
+  deps = ["//:clang"],
+  data = ["test_input.cpp"],
+  args = ["$(location :test_input.cpp)", "0", "0"],
+)

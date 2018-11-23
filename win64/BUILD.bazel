@@ -1,0 +1,1247 @@
+# cc_import(
+#   name = "libclang",
+#   shared_library = "bin/libclang.dll",
+#   interface_library = "lib/libclang.lib",
+#   visibility = ["//:__subpackages__"],
+# )
+
+# cc_import(
+#   name = "LTO",
+#   shared_library = "bin/LTO.dll",
+#   visibility = ["//:__subpackages__"],
+# )
+
+# filegroup(
+#   name = "clang-headers",
+#   srcs = glob(["lib/clang/7.0.0/include/**/*"]),
+#   visibility = ["//visibility:public"],
+# )
+
+# cc_library(
+#   name = "clang",
+#   hdrs = glob(["lib/clang/7.0.0/include/**/*"]),
+#   deps = [":libclang"],
+#   strip_include_prefix = "lib/clang/7.0.0/include",
+#   visibility = ["//visibility:public"],
+# )
+
+cc_import(
+  name = "clangAnalysis",
+  hdrs = glob(
+    ["include/clang/Analysis/*/**"],
+    exclude = [
+      "include/clang/Analysis/Analyses/ThreadSafetyOps.def",
+    ],
+  ),
+  static_library = "lib/clangAnalysis.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "clangARCMigrate",
+  static_library = "lib/clangARCMigrate.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "clangAST",
+  static_library = "lib/clangAST.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "clangASTMatchers",
+  static_library = "lib/clangASTMatchers.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "clangBasic",
+  static_library = "lib/clangBasic.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "clangCodeGen",
+  static_library = "lib/clangCodeGen.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "clangCrossTU",
+  static_library = "lib/clangCrossTU.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "clangDriver",
+  static_library = "lib/clangDriver.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "clangDynamicASTMatchers",
+  static_library = "lib/clangDynamicASTMatchers.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "clangEdit",
+  static_library = "lib/clangEdit.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "clangFormat",
+  static_library = "lib/clangFormat.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "clangFrontend",
+  static_library = "lib/clangFrontend.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "clangFrontendTool",
+  static_library = "lib/clangFrontendTool.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "clangHandleCXX",
+  static_library = "lib/clangHandleCXX.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "clangHandleLLVM",
+  static_library = "lib/clangHandleLLVM.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "clangIndex",
+  static_library = "lib/clangIndex.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "clangLex",
+  static_library = "lib/clangLex.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "clangParse",
+  static_library = "lib/clangParse.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "clangRewrite",
+  static_library = "lib/clangRewrite.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "clangRewriteFrontend",
+  static_library = "lib/clangRewriteFrontend.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "clangSema",
+  static_library = "lib/clangSema.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "clangSerialization",
+  static_library = "lib/clangSerialization.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "clangStaticAnalyzerCheckers",
+  static_library = "lib/clangStaticAnalyzerCheckers.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "clangStaticAnalyzerCore",
+  static_library = "lib/clangStaticAnalyzerCore.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "clangStaticAnalyzerFrontend",
+  static_library = "lib/clangStaticAnalyzerFrontend.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "clangTooling",
+  static_library = "lib/clangTooling.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "clangToolingASTDiff",
+  static_library = "lib/clangToolingASTDiff.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "clangToolingCore",
+  static_library = "lib/clangToolingCore.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "clangToolingInclusions",
+  static_library = "lib/clangToolingInclusions.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "clangToolingRefactor",
+  static_library = "lib/clangToolingRefactor.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "libclang",
+  static_library = "lib/libclang.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMAArch64AsmParser",
+  static_library = "lib/LLVMAArch64AsmParser.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMAArch64AsmPrinter",
+  static_library = "lib/LLVMAArch64AsmPrinter.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMAArch64CodeGen",
+  static_library = "lib/LLVMAArch64CodeGen.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMAArch64Desc",
+  static_library = "lib/LLVMAArch64Desc.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMAArch64Disassembler",
+  static_library = "lib/LLVMAArch64Disassembler.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMAArch64Info",
+  static_library = "lib/LLVMAArch64Info.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMAArch64Utils",
+  static_library = "lib/LLVMAArch64Utils.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMAggressiveInstCombine",
+  static_library = "lib/LLVMAggressiveInstCombine.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMAMDGPUAsmParser",
+  static_library = "lib/LLVMAMDGPUAsmParser.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMAMDGPUAsmPrinter",
+  static_library = "lib/LLVMAMDGPUAsmPrinter.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMAMDGPUCodeGen",
+  static_library = "lib/LLVMAMDGPUCodeGen.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMAMDGPUDesc",
+  static_library = "lib/LLVMAMDGPUDesc.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMAMDGPUDisassembler",
+  static_library = "lib/LLVMAMDGPUDisassembler.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMAMDGPUInfo",
+  static_library = "lib/LLVMAMDGPUInfo.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMAMDGPUUtils",
+  static_library = "lib/LLVMAMDGPUUtils.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMAnalysis",
+  static_library = "lib/LLVMAnalysis.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMARMAsmParser",
+  static_library = "lib/LLVMARMAsmParser.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMARMAsmPrinter",
+  static_library = "lib/LLVMARMAsmPrinter.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMARMCodeGen",
+  static_library = "lib/LLVMARMCodeGen.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMARMDesc",
+  static_library = "lib/LLVMARMDesc.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMARMDisassembler",
+  static_library = "lib/LLVMARMDisassembler.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMARMInfo",
+  static_library = "lib/LLVMARMInfo.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMARMUtils",
+  static_library = "lib/LLVMARMUtils.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMAsmParser",
+  static_library = "lib/LLVMAsmParser.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMAsmPrinter",
+  static_library = "lib/LLVMAsmPrinter.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMBinaryFormat",
+  static_library = "lib/LLVMBinaryFormat.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMBitReader",
+  static_library = "lib/LLVMBitReader.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMBitWriter",
+  static_library = "lib/LLVMBitWriter.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMBPFAsmParser",
+  static_library = "lib/LLVMBPFAsmParser.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMBPFAsmPrinter",
+  static_library = "lib/LLVMBPFAsmPrinter.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMBPFCodeGen",
+  static_library = "lib/LLVMBPFCodeGen.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMBPFDesc",
+  static_library = "lib/LLVMBPFDesc.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMBPFDisassembler",
+  static_library = "lib/LLVMBPFDisassembler.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMBPFInfo",
+  static_library = "lib/LLVMBPFInfo.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMCodeGen",
+  static_library = "lib/LLVMCodeGen.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMCore",
+  static_library = "lib/LLVMCore.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMCoroutines",
+  static_library = "lib/LLVMCoroutines.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMCoverage",
+  static_library = "lib/LLVMCoverage.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMDebugInfoCodeView",
+  static_library = "lib/LLVMDebugInfoCodeView.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMDebugInfoDWARF",
+  static_library = "lib/LLVMDebugInfoDWARF.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMDebugInfoMSF",
+  static_library = "lib/LLVMDebugInfoMSF.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMDebugInfoPDB",
+  static_library = "lib/LLVMDebugInfoPDB.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMDemangle",
+  static_library = "lib/LLVMDemangle.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMDlltoolDriver",
+  static_library = "lib/LLVMDlltoolDriver.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMExecutionEngine",
+  static_library = "lib/LLVMExecutionEngine.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMFuzzMutate",
+  static_library = "lib/LLVMFuzzMutate.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMGlobalISel",
+  static_library = "lib/LLVMGlobalISel.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMHexagonAsmParser",
+  static_library = "lib/LLVMHexagonAsmParser.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMHexagonCodeGen",
+  static_library = "lib/LLVMHexagonCodeGen.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMHexagonDesc",
+  static_library = "lib/LLVMHexagonDesc.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMHexagonDisassembler",
+  static_library = "lib/LLVMHexagonDisassembler.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMHexagonInfo",
+  static_library = "lib/LLVMHexagonInfo.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMInstCombine",
+  static_library = "lib/LLVMInstCombine.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMInstrumentation",
+  static_library = "lib/LLVMInstrumentation.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMInterpreter",
+  static_library = "lib/LLVMInterpreter.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMipo",
+  static_library = "lib/LLVMipo.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMIRReader",
+  static_library = "lib/LLVMIRReader.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMLanaiAsmParser",
+  static_library = "lib/LLVMLanaiAsmParser.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMLanaiAsmPrinter",
+  static_library = "lib/LLVMLanaiAsmPrinter.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMLanaiCodeGen",
+  static_library = "lib/LLVMLanaiCodeGen.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMLanaiDesc",
+  static_library = "lib/LLVMLanaiDesc.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMLanaiDisassembler",
+  static_library = "lib/LLVMLanaiDisassembler.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMLanaiInfo",
+  static_library = "lib/LLVMLanaiInfo.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMLibDriver",
+  static_library = "lib/LLVMLibDriver.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMLineEditor",
+  static_library = "lib/LLVMLineEditor.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMLinker",
+  static_library = "lib/LLVMLinker.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMLTO",
+  static_library = "lib/LLVMLTO.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMMC",
+  static_library = "lib/LLVMMC.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMMCDisassembler",
+  static_library = "lib/LLVMMCDisassembler.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMMCJIT",
+  static_library = "lib/LLVMMCJIT.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMMCParser",
+  static_library = "lib/LLVMMCParser.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMMipsAsmParser",
+  static_library = "lib/LLVMMipsAsmParser.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMMipsAsmPrinter",
+  static_library = "lib/LLVMMipsAsmPrinter.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMMipsCodeGen",
+  static_library = "lib/LLVMMipsCodeGen.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMMipsDesc",
+  static_library = "lib/LLVMMipsDesc.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMMipsDisassembler",
+  static_library = "lib/LLVMMipsDisassembler.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMMipsInfo",
+  static_library = "lib/LLVMMipsInfo.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMMIRParser",
+  static_library = "lib/LLVMMIRParser.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMMSP430AsmPrinter",
+  static_library = "lib/LLVMMSP430AsmPrinter.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMMSP430CodeGen",
+  static_library = "lib/LLVMMSP430CodeGen.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMMSP430Desc",
+  static_library = "lib/LLVMMSP430Desc.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMMSP430Info",
+  static_library = "lib/LLVMMSP430Info.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMNVPTXAsmPrinter",
+  static_library = "lib/LLVMNVPTXAsmPrinter.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMNVPTXCodeGen",
+  static_library = "lib/LLVMNVPTXCodeGen.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMNVPTXDesc",
+  static_library = "lib/LLVMNVPTXDesc.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMNVPTXInfo",
+  static_library = "lib/LLVMNVPTXInfo.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMObjCARCOpts",
+  static_library = "lib/LLVMObjCARCOpts.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMObject",
+  static_library = "lib/LLVMObject.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMObjectYAML",
+  static_library = "lib/LLVMObjectYAML.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMOption",
+  static_library = "lib/LLVMOption.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMOrcJIT",
+  static_library = "lib/LLVMOrcJIT.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMPasses",
+  static_library = "lib/LLVMPasses.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMPowerPCAsmParser",
+  static_library = "lib/LLVMPowerPCAsmParser.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMPowerPCAsmPrinter",
+  static_library = "lib/LLVMPowerPCAsmPrinter.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMPowerPCCodeGen",
+  static_library = "lib/LLVMPowerPCCodeGen.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMPowerPCDesc",
+  static_library = "lib/LLVMPowerPCDesc.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMPowerPCDisassembler",
+  static_library = "lib/LLVMPowerPCDisassembler.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMPowerPCInfo",
+  static_library = "lib/LLVMPowerPCInfo.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMProfileData",
+  static_library = "lib/LLVMProfileData.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMRuntimeDyld",
+  static_library = "lib/LLVMRuntimeDyld.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMScalarOpts",
+  static_library = "lib/LLVMScalarOpts.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMSelectionDAG",
+  static_library = "lib/LLVMSelectionDAG.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMSparcAsmParser",
+  static_library = "lib/LLVMSparcAsmParser.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMSparcAsmPrinter",
+  static_library = "lib/LLVMSparcAsmPrinter.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMSparcCodeGen",
+  static_library = "lib/LLVMSparcCodeGen.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMSparcDesc",
+  static_library = "lib/LLVMSparcDesc.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMSparcDisassembler",
+  static_library = "lib/LLVMSparcDisassembler.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMSparcInfo",
+  static_library = "lib/LLVMSparcInfo.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMSupport",
+  static_library = "lib/LLVMSupport.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMSymbolize",
+  static_library = "lib/LLVMSymbolize.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMSystemZAsmParser",
+  static_library = "lib/LLVMSystemZAsmParser.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMSystemZAsmPrinter",
+  static_library = "lib/LLVMSystemZAsmPrinter.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMSystemZCodeGen",
+  static_library = "lib/LLVMSystemZCodeGen.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMSystemZDesc",
+  static_library = "lib/LLVMSystemZDesc.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMSystemZDisassembler",
+  static_library = "lib/LLVMSystemZDisassembler.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMSystemZInfo",
+  static_library = "lib/LLVMSystemZInfo.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMTableGen",
+  static_library = "lib/LLVMTableGen.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMTarget",
+  static_library = "lib/LLVMTarget.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMTransformUtils",
+  static_library = "lib/LLVMTransformUtils.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMVectorize",
+  static_library = "lib/LLVMVectorize.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMWebAssemblyAsmParser",
+  static_library = "lib/LLVMWebAssemblyAsmParser.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMWebAssemblyAsmPrinter",
+  static_library = "lib/LLVMWebAssemblyAsmPrinter.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMWebAssemblyCodeGen",
+  static_library = "lib/LLVMWebAssemblyCodeGen.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMWebAssemblyDesc",
+  static_library = "lib/LLVMWebAssemblyDesc.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMWebAssemblyDisassembler",
+  static_library = "lib/LLVMWebAssemblyDisassembler.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMWebAssemblyInfo",
+  static_library = "lib/LLVMWebAssemblyInfo.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMWindowsManifest",
+  static_library = "lib/LLVMWindowsManifest.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMX86AsmParser",
+  static_library = "lib/LLVMX86AsmParser.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMX86AsmPrinter",
+  static_library = "lib/LLVMX86AsmPrinter.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMX86CodeGen",
+  static_library = "lib/LLVMX86CodeGen.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMX86Desc",
+  static_library = "lib/LLVMX86Desc.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMX86Disassembler",
+  static_library = "lib/LLVMX86Disassembler.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMX86Info",
+  static_library = "lib/LLVMX86Info.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMX86Utils",
+  static_library = "lib/LLVMX86Utils.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMXCoreAsmPrinter",
+  static_library = "lib/LLVMXCoreAsmPrinter.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMXCoreCodeGen",
+  static_library = "lib/LLVMXCoreCodeGen.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMXCoreDesc",
+  static_library = "lib/LLVMXCoreDesc.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMXCoreDisassembler",
+  static_library = "lib/LLVMXCoreDisassembler.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMXCoreInfo",
+  static_library = "lib/LLVMXCoreInfo.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_import(
+  name = "LLVMXRay",
+  static_library = "lib/LLVMXRay.lib",
+  visibility = ["//visibility:public"],
+)
+
+cc_library(
+  name = "clang",
+  hdrs = glob(["include/clang-c/**/*"]),
+  strip_include_prefix = "include",
+  deps = [
+    ":clangAnalysis",
+    ":clangARCMigrate",
+    ":clangAST",
+    ":clangASTMatchers",
+    ":clangBasic",
+    ":clangCodeGen",
+    ":clangCrossTU",
+    ":clangDriver",
+    ":clangDynamicASTMatchers",
+    ":clangEdit",
+    ":clangFormat",
+    ":clangFrontend",
+    ":clangFrontendTool",
+    ":clangHandleCXX",
+    ":clangHandleLLVM",
+    ":clangIndex",
+    ":clangLex",
+    ":clangParse",
+    ":clangRewrite",
+    ":clangRewriteFrontend",
+    ":clangSema",
+    ":clangSerialization",
+    ":clangStaticAnalyzerCheckers",
+    ":clangStaticAnalyzerCore",
+    ":clangStaticAnalyzerFrontend",
+    ":clangTooling",
+    ":clangToolingASTDiff",
+    ":clangToolingCore",
+    ":clangToolingInclusions",
+    ":clangToolingRefactor",
+    ":libclang",
+  ],
+  visibility = ["//visibility:public"],
+)
+
+cc_library(
+  name = "llvm",
+  hdrs = glob(["include/llvm-c/**/*"]),
+  strip_include_prefix = "include",
+  deps = [
+    ":LLVMAArch64AsmParser",
+    ":LLVMAArch64AsmPrinter",
+    ":LLVMAArch64CodeGen",
+    ":LLVMAArch64Desc",
+    ":LLVMAArch64Disassembler",
+    ":LLVMAArch64Info",
+    ":LLVMAArch64Utils",
+    ":LLVMAggressiveInstCombine",
+    ":LLVMAMDGPUAsmParser",
+    ":LLVMAMDGPUAsmPrinter",
+    ":LLVMAMDGPUCodeGen",
+    ":LLVMAMDGPUDesc",
+    ":LLVMAMDGPUDisassembler",
+    ":LLVMAMDGPUInfo",
+    ":LLVMAMDGPUUtils",
+    ":LLVMAnalysis",
+    ":LLVMARMAsmParser",
+    ":LLVMARMAsmPrinter",
+    ":LLVMARMCodeGen",
+    ":LLVMARMDesc",
+    ":LLVMARMDisassembler",
+    ":LLVMARMInfo",
+    ":LLVMARMUtils",
+    ":LLVMAsmParser",
+    ":LLVMAsmPrinter",
+    ":LLVMBinaryFormat",
+    ":LLVMBitReader",
+    ":LLVMBitWriter",
+    ":LLVMBPFAsmParser",
+    ":LLVMBPFAsmPrinter",
+    ":LLVMBPFCodeGen",
+    ":LLVMBPFDesc",
+    ":LLVMBPFDisassembler",
+    ":LLVMBPFInfo",
+    ":LLVMCodeGen",
+    ":LLVMCore",
+    ":LLVMCoroutines",
+    ":LLVMCoverage",
+    ":LLVMDebugInfoCodeView",
+    ":LLVMDebugInfoDWARF",
+    ":LLVMDebugInfoMSF",
+    ":LLVMDebugInfoPDB",
+    ":LLVMDemangle",
+    ":LLVMDlltoolDriver",
+    ":LLVMExecutionEngine",
+    ":LLVMFuzzMutate",
+    ":LLVMGlobalISel",
+    ":LLVMHexagonAsmParser",
+    ":LLVMHexagonCodeGen",
+    ":LLVMHexagonDesc",
+    ":LLVMHexagonDisassembler",
+    ":LLVMHexagonInfo",
+    ":LLVMInstCombine",
+    ":LLVMInstrumentation",
+    ":LLVMInterpreter",
+    ":LLVMipo",
+    ":LLVMIRReader",
+    ":LLVMLanaiAsmParser",
+    ":LLVMLanaiAsmPrinter",
+    ":LLVMLanaiCodeGen",
+    ":LLVMLanaiDesc",
+    ":LLVMLanaiDisassembler",
+    ":LLVMLanaiInfo",
+    ":LLVMLibDriver",
+    ":LLVMLineEditor",
+    ":LLVMLinker",
+    ":LLVMLTO",
+    ":LLVMMC",
+    ":LLVMMCDisassembler",
+    ":LLVMMCJIT",
+    ":LLVMMCParser",
+    ":LLVMMipsAsmParser",
+    ":LLVMMipsAsmPrinter",
+    ":LLVMMipsCodeGen",
+    ":LLVMMipsDesc",
+    ":LLVMMipsDisassembler",
+    ":LLVMMipsInfo",
+    ":LLVMMIRParser",
+    ":LLVMMSP430AsmPrinter",
+    ":LLVMMSP430CodeGen",
+    ":LLVMMSP430Desc",
+    ":LLVMMSP430Info",
+    ":LLVMNVPTXAsmPrinter",
+    ":LLVMNVPTXCodeGen",
+    ":LLVMNVPTXDesc",
+    ":LLVMNVPTXInfo",
+    ":LLVMObjCARCOpts",
+    ":LLVMObject",
+    ":LLVMObjectYAML",
+    ":LLVMOption",
+    ":LLVMOrcJIT",
+    ":LLVMPasses",
+    ":LLVMPowerPCAsmParser",
+    ":LLVMPowerPCAsmPrinter",
+    ":LLVMPowerPCCodeGen",
+    ":LLVMPowerPCDesc",
+    ":LLVMPowerPCDisassembler",
+    ":LLVMPowerPCInfo",
+    ":LLVMProfileData",
+    ":LLVMRuntimeDyld",
+    ":LLVMScalarOpts",
+    ":LLVMSelectionDAG",
+    ":LLVMSparcAsmParser",
+    ":LLVMSparcAsmPrinter",
+    ":LLVMSparcCodeGen",
+    ":LLVMSparcDesc",
+    ":LLVMSparcDisassembler",
+    ":LLVMSparcInfo",
+    ":LLVMSupport",
+    ":LLVMSymbolize",
+    ":LLVMSystemZAsmParser",
+    ":LLVMSystemZAsmPrinter",
+    ":LLVMSystemZCodeGen",
+    ":LLVMSystemZDesc",
+    ":LLVMSystemZDisassembler",
+    ":LLVMSystemZInfo",
+    ":LLVMTableGen",
+    ":LLVMTarget",
+    ":LLVMTransformUtils",
+    ":LLVMVectorize",
+    ":LLVMWebAssemblyAsmParser",
+    ":LLVMWebAssemblyAsmPrinter",
+    ":LLVMWebAssemblyCodeGen",
+    ":LLVMWebAssemblyDesc",
+    ":LLVMWebAssemblyDisassembler",
+    ":LLVMWebAssemblyInfo",
+    ":LLVMWindowsManifest",
+    ":LLVMX86AsmParser",
+    ":LLVMX86AsmPrinter",
+    ":LLVMX86CodeGen",
+    ":LLVMX86Desc",
+    ":LLVMX86Disassembler",
+    ":LLVMX86Info",
+    ":LLVMX86Utils",
+    ":LLVMXCoreAsmPrinter",
+    ":LLVMXCoreCodeGen",
+    ":LLVMXCoreDesc",
+    ":LLVMXCoreDisassembler",
+    ":LLVMXCoreInfo",
+    ":LLVMXRay",
+  ],
+  visibility = ["//visibility:public"],
+)
