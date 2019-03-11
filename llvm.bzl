@@ -1,3 +1,5 @@
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+
 LLVM_WIN64_BUILD_FILE_CONTENT = """
 cc_import(
   name = "clangAnalysis",
@@ -1222,7 +1224,7 @@ cc_library(
 """;
 
 def llvm():
-  native.new_http_archive(
+  http_archive(
     name = "bazelregistry_llvm_win64",
     url = "https://ziglang.org/deps/llvm%2bclang-7.0.0-win64-msvc-release.tar.xz",
     strip_prefix = "llvm+clang-7.0.0-win64-msvc-release",
